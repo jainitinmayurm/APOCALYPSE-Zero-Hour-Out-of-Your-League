@@ -1,0 +1,60 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-zinc-950 text-zinc-100 font-sans min-h-screen;
+    background-image: 
+      radial-gradient(circle at 50% 0%, rgba(16, 185, 129, 0.04) 0%, transparent 65%),
+      linear-gradient(rgba(24, 24, 27, 0.4) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(24, 24, 27, 0.4) 1px, transparent 1px);
+    background-size: 100% 100%, 32px 32px, 32px 32px;
+  }
+}
+
+/* Custom Tactical Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #09090b;
+}
+::-webkit-scrollbar-thumb {
+  background: #27272a;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #3f3f46;
+}
+
+/* Scanline Overlay for CRT Terminal Feel */
+.tactical-scanlines {
+  position: relative;
+}
+.tactical-scanlines::after {
+  content: " ";
+  display: block;
+  position: absolute;
+  top: 0; left: 0; bottom: 0; right: 0;
+  background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.15) 50%);
+  background-size: 100% 4px;
+  z-index: 10;
+  pointer-events: none;
+  opacity: 0.6;
+}
+
+/* Tactical Glow Utilities */
+.glow-emerald {
+  box-shadow: 0 0 15px -2px rgba(16, 185, 129, 0.25);
+}
+.glow-amber {
+  box-shadow: 0 0 15px -2px rgba(245, 158, 11, 0.25);
+}
+.glow-cyan {
+  box-shadow: 0 0 15px -2px rgba(6, 182, 212, 0.25);
+}
+.glow-red {
+  box-shadow: 0 0 20px -2px rgba(239, 68, 68, 0.4);
+}
